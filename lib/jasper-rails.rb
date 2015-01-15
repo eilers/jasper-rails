@@ -153,8 +153,9 @@ module JasperRails
 
   class ActionController::Responder
     def to_pdf
-      jasper_file =  (@options[:template] && "#{Rails.root.to_s}/app/views/#{controller.controller_path}/#{@options[:template]}") ||
-          "#{Rails.root.to_s}/app/views/#{controller.controller_path}/#{controller.action_name}.jasper"
+      root_path = @options[:engine].constantize::Engine.root if @options[:engine]
+      jasper_file =  (@options[:template] && "#{ root_path || Rails.root.to_s}/app/views/#{@options[:template]}") ||
+        "#{root_path || Rails.root.to_s}/app/views/#{controller.controller_path}/#{controller.action_name}.jasper"
 
       params = {}
       controller.instance_variables.each do |v|
