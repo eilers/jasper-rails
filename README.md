@@ -81,6 +81,19 @@ All you have to do now is to create, in iReport, a parameter called "user" (yes,
 
 Limitation: By now, all parameters that aren't manually converted to Rjb java classes/instances are converted to java String. We intend to change this in the near future.
 
+## Rails Engines
+
+```ruby
+module EngineName
+  class PeopleController < ApplicationController
+    def index
+      @people = Person.all
+      respond_with @people, engine: 'EngineName'
+    end
+  end
+end
+```
+
 ## Passing Java parameters directly
 
 ```ruby
