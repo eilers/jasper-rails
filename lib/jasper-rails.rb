@@ -85,8 +85,8 @@ module JasperRails
           config = {
             :report_params=>{
               "REPORT_LOCALE"    => locale.new('pt', 'BR'),
-              "XML_LOCALE"       => locale.new('pt', 'BR'),
-              "XML_DATE_PATTERN" => 'dd-MM-yyyy'
+              "XML_LOCALE"       => locale.new('en', 'US'),
+              "XML_DATE_PATTERN" => 'yyyy-MM-dd'
             }
           }
         
