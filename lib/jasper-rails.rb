@@ -23,7 +23,7 @@
 require "jasper-rails/version"
 require "rails"
 require "rjb"
-# require "action_controller/metal/responder"
+require "application_responder"
 
 if Mime::Type.lookup_by_extension("pdf").nil?
   Mime::Type.register "application/pdf", :pdf
