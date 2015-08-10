@@ -113,7 +113,7 @@ module JasperRails
 						input_source = inputSource.new
 						datasource = datasource.to_xml(options) if datasource.respond_to? :to_xml
 						datasource = datasource.to_s
-						input_source.setCharacterStream(stringReader.new(datasource)
+						input_source.setCharacterStream(stringReader.new(datasource))
 						data_document = silence_warnings do
 							# This is here to avoid the "already initialized constant DOCUMENT_POSITION_*" warnings.
 							jRXmlUtils._invoke('parse', 'Lorg.xml.sax.InputSource;', input_source)
