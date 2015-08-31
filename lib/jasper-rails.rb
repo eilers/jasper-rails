@@ -165,7 +165,7 @@ module JasperRails
 			end
 
 			controller.send_data Jasper::Rails::render_pdf(jasper_file, resource, params, options), :type => Mime::PDF, 
-						:disposition => 'inline'
+						:disposition => 'attachment'
 		end
 	end
 
